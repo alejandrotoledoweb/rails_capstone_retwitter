@@ -1,9 +1,16 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <nav class=''>
+<header class="navbar-fixed-top">
+  <nav class='mt-4 mr-5'>
     <ul class="d-flex flex-row justify-content-end navbar-nav navbar-right">
       <li class='mr-4'><%= link_to "Home", root_path %></li>
-      <li class='mr-4'><%= link_to "Help", help_path %></li>
-      <li class='mr-4'><%= link_to "Log in", '#' %></li>
+      <li class='mr-4'><%= link_to "Users", users_path %></li>
+      <% if logged_in? %>
+          <li class='mr-4'><%= link_to "Profile", current_user %></li>
+          <li class='mr-4'><%= link_to "Edit profile", edit_user_path(current_user) %></li>
+          <li class='mr-4'><%= link_to "Log out", logout_path, method: "delete" %></li>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
     </ul>
   </nav>
 </header>
