@@ -1,5 +1,21 @@
 <% provide(:title, @user.username) %>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.username %>
-</h1>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.username %>
+      </h1>
+    </section>
+  </aside>
+
+  <div class="col-md-8">
+    <% if @user.messages.any? %>
+      <h3>Messages (<%= @user.messages.count %>)</h3>
+      <ol class="messages">
+        <%= render @messages %>
+      </ol>
+      <%= will_paginate @messages %>
+    <% end %>
+  </div>
+</div>

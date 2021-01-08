@@ -1,0 +1,7 @@
+<%= form_with(model: @message, local: true) do |f| %>
+  
+  <div class="field">
+    <%= f.text_area :body, placeholder: "Compose new message..." %>
+  </div>
+  <%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>
