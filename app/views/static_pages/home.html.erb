@@ -8,6 +8,10 @@
         <%= render 'shared/message_form' %>
       </section>
     </aside>
+    <div class="col-md-8">
+      <h3>Messages Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
   </div>
 <% else %>
   <div class="center jumbotron">
@@ -21,6 +25,6 @@
   </div>
 
   <%= link_to image_tag("rails.png", alt: "Rails logo"),
-              'http://rubyonrails.org/' %>
+              '#' %>
 
 <% end %>

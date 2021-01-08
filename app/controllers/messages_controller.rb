@@ -7,8 +7,9 @@ class MessagesController < ApplicationController
       flash[:succes] = 'Message created!'
       redirect_to root_url
     else
+      flash[:notice] = 'Message is empty, please type something!'
       @feed_items = current_user.feed.paginate(page: params[:page])
-      render 'static_page/home'
+      redirect_to root_path
     end
   end
 
