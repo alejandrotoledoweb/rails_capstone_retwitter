@@ -23,7 +23,7 @@ class User < ApplicationRecord
     Message.where("user_id = ?", id)
   end
 
-  # Follows a user.
+  # Follows a usera and prevent to follow yourself
   def follow(other_user)
     following << other_user unless self == other_user
   end
