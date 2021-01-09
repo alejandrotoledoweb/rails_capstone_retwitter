@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def feed
+    Message.where("user_id = ?", id)
+  end
+
 end
