@@ -20,10 +20,13 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
 
   def feed
-    Message.where("user_id = ?", id)
+    following_ids = "SELECT followed_id FROM relationships
+                     WHERE  follower_id = :user_id"
+    Message.where("user_id IN (#{following_ids})
+                     OR user_id = :user_id", user_id: id)
   end
 
-  # Follows a usera and prevent to follow yourself
+  # Follows a user and prevent to follow yourself
   def follow(other_user)
     following << other_user unless self == other_user
   end
