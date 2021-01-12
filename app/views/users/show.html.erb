@@ -24,7 +24,7 @@
     <section class='row'>
       <div class='col-8'>
       <p class='cover'>
-        <img src="http://dummyimage.com/550x300/000/00ffd5.png" alt="Stack Overflow logo and icons and such">
+        <img src="https://loremflickr.com/640/360" alt="Stack Overflow logo and icons and such">
        </p>
         <% if @user.messages.any? %>
           <h4 class='border-bottom border-top pt-3 pb-3 mb-4'>Messages (<%= @user.messages.count %>)</h4>
@@ -36,7 +36,7 @@
       </div>
       <div class='col-4 side-rigth'>
         <%= render 'shared/user_info' %>
-        <%= render 'shared/stats' %>
+        <%= render 'shared/current_user_stats' %>
         <h4 class='text-dark border-bottom pb-3 pt-3'>Followed By</h4>
         <div>
           <h3><%= @title %></h3>
