@@ -112,7 +112,6 @@ m = Module.new do
     exit 42
 
     # rubocop:enable Layout/LineLength
-
   end
 
   def activation_error_handling
