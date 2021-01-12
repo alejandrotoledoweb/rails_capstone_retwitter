@@ -1,8 +1,28 @@
-<% provide(:title, 'All users') %>
-<h1>All users</h1>
+<section class='row'>
+  <aside class="col-lg-3 bg-secondary pt-2">
+    <section class="user_info d-block mx-auto pb-4">
+      <%= render 'shared/user_info' %>
+    </section>
+    <section class="stats pb-4 pl-5">
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
+      <%= render 'layouts/side_header' %>
+    </section>
+  </aside>
+    
+  <div class='col-9'> 
+    <section class='blue-head'>
+      <%= render 'layouts/header' %>
+    </section>
+    <% provide(:title, 'All users') %>
+    <h1>All users</h1>
 
-<ul class="users">
-  <% @users.each do |user| %>
-    <%= render user %> <br>
-  <% end %>
-</ul>
+    <ul class="users">
+      <% @users.each do |user| %>
+        <%= render user %> <br>
+        
+      <% end %>
+    </ul>
+  </div>
+</section>

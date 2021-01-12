@@ -1,3 +1,40 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.menu-list {
+  list-style-type: none;
+}
+
+.c-white {
+  color: white;
+  font-size: 1rem;
+}
+
+.user_info {
+  padding-left: 4rem;
+}
+
+.home-btn {
+  background-color: #53a8e9;
+  margin-left: -3.5rem;
+  margin-right: -1.0rem;
+}
+
+.blue-head {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.messages {
+  list-style-type: none;
+}
+
+.side-rigth {
+  background-color:#f5f6f8;
+}
+
+.cover {
+  margin-left: -0.4rem;
+}

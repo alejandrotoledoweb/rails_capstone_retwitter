@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:session][:username].downcase)
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to root_url
     else
       flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+      render 'static_pages#home'
     end
   end
 

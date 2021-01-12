@@ -1,26 +1,54 @@
 <% provide(:title, @user.username) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-3 bg-secondary pt-2">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
+        <%= gravatar_for @user %> <br>
         <%= @user.username %>
       </h1>
     </section>
     <section class="stats">
       <%= render 'shared/stats' %>
     </section>
-    <%= render 'follow_form' if logged_in? %>
+    <div class='pb-2'>
+      <%= render 'follow_form' if logged_in? %>
+    </div>
+    <%= render 'layouts/side_header' %>
   </aside>
   
 
-  <div class="col-md-8">
-    <% if @user.messages.any? %>
-      <h3>Messages (<%= @user.messages.count %>)</h3>
-      <ol class="messages">
-        <%= render @messages %>
-      </ol>
-      <%= will_paginate @messages %>
-    <% end %>
+  <div class="col-md-9">
+    <section class='blue-head'>
+      <%= render 'layouts/header' %>
+    </section>
+    <section class='row'>
+      <div class='col-8'>
+      <p class='cover'>
+        <img src="http://dummyimage.com/550x300/000/00ffd5.png" alt="Stack Overflow logo and icons and such">
+       </p>
+        <% if @user.messages.any? %>
+          <h4 class='border-bottom border-top pt-3 pb-3 mb-4'>Messages (<%= @user.messages.count %>)</h4>
+          <ol class="messages">
+            <%= render @messages %>
+          </ol>
+          <%= will_paginate @messages %>
+        <% end %>
+      </div>
+      <div class='col-4 side-rigth'>
+        <%= render 'shared/user_info' %>
+        <%= render 'shared/stats' %>
+        <h4 class='text-dark border-bottom pb-3 pt-3'>Followed By</h4>
+        <div>
+          <h3><%= @title %></h3>
+          <% if @users.any? %>
+            <ul class="users">
+              <% @usersf.each do |user| %>
+                <%= render user %> <br>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </section>
   </div>
 </div>

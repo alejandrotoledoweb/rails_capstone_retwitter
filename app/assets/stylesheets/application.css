@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ .blue-nav {
+   background-color: #53a8e9;
+   list-style-type: none;
+ }
+
+ .blue-menu {
+  list-style-type: none;
+ }
+
+
+ 

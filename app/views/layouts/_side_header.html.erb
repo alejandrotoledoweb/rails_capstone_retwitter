@@ -1,0 +1,14 @@
+<section>
+  <ul class='menu-list'>
+    <li class='pr-5 pl-5 pt-2 pb-2 c-white home-btn'><%= link_to "Home", root_path %></li>
+    <li class='pr-4 c-white'><%= link_to "Users", users_path %></li>
+    <% if logged_in? %>
+      <li class='mr-4 c-white'><%= link_to "Profile", current_user %></li>
+      <li class='mr-4 c-white'><%= link_to "Edit profile", edit_user_path(current_user) %></li>
+      <li class='pr-4 c-white'><%= link_to "Log out", logout_path, method: "delete" %></li>
+      </li>
+    <% else %>
+      <li><%= link_to "Log in", login_path %></li>
+    <% end %>
+  </ul>
+</section>

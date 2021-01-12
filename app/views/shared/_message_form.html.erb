@@ -1,7 +1,8 @@
 <%= form_with(model: @message, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
+  <div class="field d-flex">
     <%= f.text_area :body, placeholder: "Compose new message..." %>
+    <%= f.submit "Create", class: "btn btn-primary" %>
   </div>
-  <%= f.submit "Create", class: "btn btn-primary" %>
+  
 <% end %>

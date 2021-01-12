@@ -1,8 +1,12 @@
-<li id="messages-<%= message.id %>">
-  <%= link_to gravatar_for(message.user), message.user, class: 'pb-4' %>
-  <span class="user"><%= link_to message.user.username, message.user %></span> <br>
-  <span class="body"><%= message.body %></span> <br>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(message.created_at) %> ago.
-  </span>
+<li id="messages-<%= message.id %>" class='d-flex'>
+  <div class='pr-2 pb-2'>
+    <%= link_to gravatar_for(message.user), message.user, class: 'pb-4' %>
+  </div>
+  <div>
+    <span class="user"><%= link_to message.user.username, message.user %></span>
+    <span class="body"><%= message.body %></span> <br>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(message.created_at) %> ago.
+    </span>
+  </div>
 </li>
