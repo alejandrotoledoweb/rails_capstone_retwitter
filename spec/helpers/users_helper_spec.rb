@@ -11,5 +11,10 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe UsersHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'valid when it has a gravatar' do
+    user = User.new
+    user.email = 'alext@email.com'
+    g = helper.gravatar_for(user)
+    expect(g).to eql('<img class=\"gravatar\" src=\"https://secure.gravatar.com/avatar/b43f643e521679f7fb249c071e0900eb\" />')
+  end
 end

@@ -1,22 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Relationship, type: :model do
-  before :each do
-    user = User.new
-    user.username = 'User'
-    user.email = 'user@email.com'
-    user.fullname = 'fullname1'
-    user.password = '111111'
-    user.password_confirmation = '111111'
-
-    user1 = User.new
-    user1.username = 'User1'
-    user1.email = 'user1@email.com'
-    user1.fullname = 'fullname2'
-    user1.password = '222222'
-    user1.password_confirmation = '222222'
-  end
-
   it 'is test to create a following' do
     user = User.new
     user1 = User.new
