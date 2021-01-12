@@ -1,16 +1,14 @@
 class SessionsController < ApplicationController
-
-  def new
-  end
+  def new; end
 
   def create
     @user = User.find_by(username: params[:session][:username].downcase)
-    if @user && @user.authenticate(params[:session][:password])
+    if @user&.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       redirect_to root_url
     else
       flash.now[:danger] = 'Invalid email/password combination'
-      redirect_to root_url
+      redirect_to root_path
     end
   end
 
