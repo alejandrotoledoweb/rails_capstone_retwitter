@@ -3,9 +3,9 @@
     <%= link_to gravatar_for(message.user), message.user, class: 'pb-4' %>
   </div>
   <div>
-    <span class="user"><%= link_to message.user.username, message.user %></span>
-    <span class="body"><%= message.body %></span> <br>
-    <span class="timestamp">
+    <span class="user"><%= link_to message.user.username, message.user, class: 'text-dark' %></span>
+    <span class="stat-1"><%= message.body %></span> <br>
+    <span class="timestamp stat">
       Posted <%= time_ago_in_words(message.created_at) %> ago.
     </span>
   </div>

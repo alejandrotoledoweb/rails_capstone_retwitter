@@ -1,13 +1,15 @@
 <% provide(:title, @user.username) %>
 <div class="row">
-  <aside class="col-md-3 bg-secondary pt-2">
-    <section class="user_info">
+  <aside class="col-md-3 bg-black pt-3">
+    <section class="d-flex align-items-center justify-content-center pb-5">
       <h1>
         <%= gravatar_for @user %> <br>
-        <%= @user.username %>
       </h1>
+      <h5 class='user-info ml-3'>
+        <%= @user.username %>
+      </h5>
     </section>
-    <section class="stats">
+    <section class="stat pl-5">
       <%= render 'shared/stats' %>
     </section>
     <div class='pb-2'>
@@ -27,7 +29,7 @@
         <img src="https://loremflickr.com/640/360" alt="Stack Overflow logo and icons and such">
        </p>
         <% if @user.messages.any? %>
-          <h4 class='border-bottom border-top pt-3 pb-3 mb-4'>Messages (<%= @user.messages.count %>)</h4>
+          <h6 class='border-bottom pt-3 pb-3 mb-4'>MESSAGES (<%= @user.messages.count %>)</h6>
           <ol class="messages">
             <%= render @messages %>
           </ol>
@@ -35,9 +37,11 @@
         <% end %>
       </div>
       <div class='col-4 side-rigth'>
-        <%= render 'shared/user_info' %>
+      <div class='pl-5 text-black'>
+        <%= render 'shared/user_info', class: 'text-black' %>
+      </div>
         <%= render 'shared/current_user_stats' %>
-        <h4 class='text-dark border-bottom pb-3 pt-3'>Followed By</h4>
+        <h5 class='stat border-bottom pb-3 pt-3 pl-4 '>Followed By</h5>
         <div>
           <h3><%= @title %></h3>
           <% if @users.any? %>

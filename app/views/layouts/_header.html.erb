@@ -1,13 +1,13 @@
 <header class="d-block">
   <nav class='blue-nav pt-4 pl-2 pr-4 pb-3'>
     <ul class="d-flex menu-list">
-      <li class='pr-4 c-white'><%= link_to "Home", root_path %></li>
+      <li class='pr-4 c-white'><%= link_to "Home", root_path, class: 'white-link' %></li>
       
       <% if logged_in? %>
-        <li class='mr-5 pr-4 pl-4 c-white'><%= link_to "Users", users_path %></li>
-        <li class='pr-4 pl-4 c-white'><%= link_to "Log out", logout_path, method: "delete" %></li>
+        <li class='mr-5 pr-4 pl-4 c-white'><%= link_to "Users", users_path, class: 'white-link' %></li>
+        <li class='pr-4 pl-4 c-white'><%= link_to "Log out", logout_path, method: "delete", class: 'white-link' %></li>
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <li class='white-link'><%= link_to "Log in", login_path, class: 'white-link' %></li>
         <% end %>
     </ul>
   </nav>
