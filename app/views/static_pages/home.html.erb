@@ -1,0 +1,48 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-lg-3 bg-black pt-2">
+      <section class="user_info d-block mx-auto pb-4">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats pb-4 pl-5">
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+        <%= render 'layouts/side_header' %>
+      </section>
+    </aside>
+    
+    <div class="col-lg-9">
+      <section class='blue-head'>
+        <%= render 'layouts/header' %>
+      </section>
+      <section class='row'>
+        <div class='col-8'>
+          <h6 class='border-bottom border-top pt-3 pb-3 mb-4'>MESSAGES FEED</h6>
+          <section class="message_form border-bottom pb-3 mb-4">
+            <%= render 'shared/message_form' %>
+          </section>
+          <%= render 'shared/feed' %>
+        </div>
+        <div class='col-4 side-rigth'>
+          <%= render 'shared/who_follow' %>
+        </div>
+      </section>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+  <%= render 'layouts/header' %>
+    <h1>Welcome to The RailsCapstoneRetwitter</h1>
+
+    <h2>
+      This is the home page for the capstone project for ruby on rails.
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+  
+  <%= link_to image_tag("twitter.png", alt: "Rails logo"),
+              '#', class: 'col-lg-3' %>
+
+<% end %>

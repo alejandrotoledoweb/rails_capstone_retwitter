@@ -1,0 +1,7 @@
+<section class=' pt-3'>
+  <div class='d-flex align-items-center'>
+    <%= link_to gravatar_for(current_user), current_user, class: 'gravatar' %>
+    <h5 class='user-info ml-3'><%= current_user.username %></h5>
+  </div>
+  <span class='user-info ml-3'><%= pluralize(current_user.messages.count, "message") %></span>
+</section>
