@@ -31,18 +31,21 @@
     </div>
   </div>
 <% else %>
-  <div class="center jumbotron">
+  <div class="center jumbotron text-center">
   <%= render 'layouts/header' %>
-    <h1>Welcome to The RailsCapstoneRetwitter</h1>
+    <h1 class="mt-5">Welcome to The RailsCapstoneRetwitter</h1>
 
     <h2>
       This is the home page for the capstone project for ruby on rails.
     </h2>
 
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary mb-1 mt-1" %>
+    <p>OR</p>
+    <%= link_to "LOG IN", login_path, class: "btn btn-lg btn-primary mt-1 mb-1" %>
+
   </div>
   
   <%= link_to image_tag("twitter.png", alt: "Rails logo"),
-              '#', class: 'col-lg-3' %>
+              '#', class: 'img-fluid d-flex text-center d-flex justify-content-center align-items-center' %>
 
 <% end %>
